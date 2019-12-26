@@ -1,0 +1,15 @@
+.primary-button{
+    background: white;
+    color: #007bff;
+    font-size: 12px;
+}
+
+.danger-button{
+    background: white;
+    color: red;
+    font-size: 12px;
+}
+
+p{
+    font-size: 12px;
+}

@@ -1,0 +1,23 @@
+<div class="row m-0 mt-4">
+    <div class="col-sm-6">
+        <div style="width: 100%; padding-left: 30%;word-break: break-all;">
+            <h4 for="name" class="control-label">
+                Shopping List "{{ selectedList.label }}"
+                <i style="font-size: xx-large; color: steelblue;" class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </h4>
+            <div style="margin-top: 8%;">
+                <app-product-list [products]="products" [selectedProducts]="selectedList.products" [toAdd]="false" (addProductEvent)="addProduct($event)"></app-product-list>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group" style="width: 100%; padding-right: 30%;">
+            <h4 for="name" class="control-label ml-5">Available Products</h4>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Search products" 
+            [(ngModel)]="searchKey" autocomplete="off" />
+            <div style="margin-top: 8%;">
+                <app-product-list [products]="products | searchByKey:searchKey" [selectedProducts]="selectedList.products" [toAdd]="true" (addProductEvent)="addProduct($event)"></app-product-list>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="card mb-2" style="width: 18rem;">
+  <div class="card-body row">
+    <div class="col-sm-8">
+      <p class="card-title">
+        {{ product.name }}
+      </p>
+      <button [class.btn-primary]="toAdd" [class.btn-danger]="!toAdd" 
+      [class.primary-button]="toAdd" [class.danger-button]="!toAdd"
+      class="btn" (click)="addProduct(product.id, toAdd)">
+      <span *ngIf="toAdd">+ Add to shopping list</span>
+      <span *ngIf="!toAdd">- Remove from shopping list</span>
+      </button>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-responsive" height="60%" width="100%" src="{{ product.imgUrl }}" alt="phone">
+    </div>
+  </div>
+</div>
+

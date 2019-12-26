@@ -1,0 +1,17 @@
+<ng-container *ngIf="!toAdd">
+    <app-widget
+      *ngFor="let product of products | intersection: selectedProducts"
+      [product]="product"
+      [toAdd]="false"
+      (onAddProductEvent)="addProduct($event)"
+    ></app-widget>
+</ng-container>
+
+<ng-container *ngIf="toAdd">
+  <app-widget
+    *ngFor="let product of products | diff: selectedProducts"
+    [product]="product"
+    [toAdd]="true"
+    (onAddProductEvent)="addProduct($event)"
+  ></app-widget>
+</ng-container>

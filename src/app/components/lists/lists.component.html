@@ -1,0 +1,25 @@
+<div class="row m-0 mt-3">
+    <div class="col-sm-6">
+        <div style="word-break: break-all; margin-left: 40%;">
+            <h4 for="name" class="control-label mb-4">Shopping Lists</h4>
+            <h6 style="margin-left: auto;" *ngFor="let list of lists; let idx = index">
+                <div class="icon-div">
+                    <i class="fa fa-shopping-bag icon" aria-hidden="true"> </i>
+                </div>
+                <span class="m-2">{{ list.label }}</span>
+                <i *ngIf="list.id != 1" style="cursor: pointer; color: red;" class="fa fa-trash m-2" aria-hidden="true" (click)="deleteList(idx)"></i>
+                <i style="cursor: pointer; color: blue;" class="fa fa-pencil" aria-hidden="true" (click)="editList(list.id)"></i>
+            </h6>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group text-center">
+            <h4 for="name" class="control-label mb-4">Create Shopping List</h4>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Name" [(ngModel)]="newListLabel" />
+            <button style="width: 20%;" class="btn btn-primary mt-2" [disabled]="newListLabel.trim().length == 0"
+                (click)="createList()">
+                Create
+            </button>
+        </div>
+    </div>
+</div>

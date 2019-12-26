@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-primary">
+  <form>
+    <button class="btn btn-dark nav-button m-2" type="button" 
+    *ngFor="let tab of tabs; let idx = index" (click)="selectTab(idx)"
+    routerLink="{{tab.toLowerCase().split(' ').join('')}}">{{ tab }}</button>
+  </form>
+  <span class="navbar-brand mx-auto w-25">{{ tabs[selectedTab] }}</span>
+</nav>
+
+<router-outlet></router-outlet>

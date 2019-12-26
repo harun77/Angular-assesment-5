@@ -1,0 +1,21 @@
+input[type="text"] {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 2px solid #f0e9e9;
+  width: 80%;
+  margin: auto;
+}
+
+.icon-div{
+  height:25px; 
+  width: 25px; 
+  display: inline-block; 
+  border-radius: 50%; 
+  background: black;
+}
+
+.icon{
+  padding: 4px; 
+  color: green;
+}
